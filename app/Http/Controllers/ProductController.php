@@ -29,7 +29,7 @@ class ProductController extends Controller
         }
 
         //$formulario = Product :: get();
-        return view('products/form',['products'=> $product]);
+        return view('products/form',['product'=> $product]);
     }
 
     function save(Request $request)

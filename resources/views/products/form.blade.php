@@ -8,7 +8,7 @@
 
 <form action="{{route('products.save')}}" method="POST" class="container">
   @csrf
-  {{-- <input type="hidden" name="id" value="{{old('id') ? old('id' : $product->id }}"> --}}
+  <input type="hidden" name="id" value="{{old('id') ? old('id'): $product->id }}">
       <div class="mb-3 row">
         <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
         <div class="col-sm-10">
@@ -59,7 +59,7 @@
       <div class="mb-3 row">
         <label for="nombre" class="col-sm-2 col-form-label">Marca</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control"  id="brand" name="brand" value="{{old('brand') ? old('brand') : $products->brand }}">
+          <input type="text" class="form-control"  id="brand" name="brand" value="{{old('brand') ? old('brand') : $product->brand }}">
         </div>
       </div>
       @error('brand')
