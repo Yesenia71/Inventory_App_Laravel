@@ -7,7 +7,7 @@
     
 <a href="products/form" class="btn btn-primary"> Nuevo Producto</a>
 @if(session()->has('message'))
-<div class="aler aler-success">
+<div class="alert alert-success">
 {{session()->get('message')}}
 </div>
 @endif
@@ -36,7 +36,7 @@
             <td>{{$product->quantity}}</td>
             <td>{{$product->brand}}</td>
             <th>
-                <a href="#" class="btn btn-warning">Editar</a>
+                <a href="{{route('products.form',['id'=>$product->id])}}" class="btn btn-warning">Editar</a>
                 {{-- <a href="/ListProducts/delete/{{$product->id}}" class="btn btn-danger">Borrar</a> --}}
                 <a href="{{ route ('prodDelete',['id'=>$product->id])}}" class="btn btn-danger">Borrar</a>
                 

@@ -50,7 +50,8 @@ Route::get('/ListProducts',[ProductController::class,"show"])->name('Productos')
  
  /*ruta para registro de productos*/ 
  //Route::get('/products/formulario',[ProductController::class,"registro"]);
- Route::get('products/form',[ProductController::class,"form"])->name('products.form');
+ // se le agrega el id para usar las misma ritas y el mismo formulario para editar y nuevo producto
+ Route::get('products/form/{id?}',[ProductController::class,"form"])->name('products.form');
 
  //ruta para save
  Route::post('products/save',[ProductController::class,"save"])->name('products.save');
