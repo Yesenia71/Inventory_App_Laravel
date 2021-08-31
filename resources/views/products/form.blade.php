@@ -1,12 +1,10 @@
 @extends('layout')
-@section('title','Nuevo Producto')
+@section('title',$product->id ? 'Actualizar Producto': 'Nuevo Producto')
 <br>
 <br>
-@section('encabezado','Nuevo Producto')
+@section('encabezado',$product->id ? 'Actualizar Producto':'Nuevo Producto')
 @section('Content') 
- 
-
-<form action="{{route('products.save')}}" method="POST" class="container">
+ <form action="{{route('products.save')}}" method="POST" class="container">
   @csrf
   <input type="hidden" name="id" value="{{old('id') ? old('id'): $product->id }}">
       <div class="mb-3 row">
@@ -20,7 +18,6 @@
             {{$message}}
           </p>
       @enderror
-
       <div class="mb-3 row">
         <label for="nombre" class="col-sm-2 col-form-label">Costo</label>
         <div class="col-sm-10">
@@ -32,7 +29,6 @@
             {{$message}}
           </p>
       @enderror
-
       <div class="mb-3 row">
         <label for="nombre" class="col-sm-2 col-form-label">Precio</label>
         <div class="col-sm-10">
@@ -44,7 +40,6 @@
             {{$message}}
           </p>
       @enderror
-
       <div class="mb-3 row">
         <label for="nombre" class="col-sm-2 col-form-label">Cantidad</label>
         <div class="col-sm-10">
@@ -67,7 +62,6 @@
         {{$message}}
       </p>
       @enderror
-
 <div class="mb-3 row">
         <div class="col-sm-10"></div>
         <div class="col-sm-10"></div>
